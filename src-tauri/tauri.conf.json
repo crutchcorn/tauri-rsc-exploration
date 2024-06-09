@@ -1,7 +1,7 @@
 {
   "productName": "tauri-rsc-exploration",
   "version": "0.0.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.example.com",
   "app": {
     "withGlobalTauri": true,
     "windows": [
@@ -15,6 +15,9 @@
     "security": {
       "csp": null
     }
+  },
+  "build": {
+    "beforeBuildCommand": "pnpm next:build"
   },
   "bundle": {
     "active": true,
