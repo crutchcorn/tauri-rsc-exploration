@@ -26,6 +26,14 @@ fn main() {
 
                         println!("{}", s);
                     }
+                    else if let CommandEvent::Stderr(line) = event {
+                        let s = match str::from_utf8(&line) {
+                            Ok(v) => v,
+                            Err(e) => panic!("Invalid UTF-8 sequence: {}", e),
+                        };
+
+                        eprintln!("{}", s);
+                    }
                 }
             });
 
