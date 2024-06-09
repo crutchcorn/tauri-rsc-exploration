@@ -4,9 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "tauri": "tauri"
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "copy-node": "node scripts/get-node.js"
   },
   "devDependencies": {
-    "@tauri-apps/cli": ">=2.0.0-beta.0"
+    "@tauri-apps/cli": ">=2.0.0-beta.0",
+    "execa": "^9.2.0"
+  },
+  "packageManager": "pnpm@9.1.4",
+  "engines": {
+    "node": "18.20.2",
+    "pnpm": "9.1.4"
   }
 }

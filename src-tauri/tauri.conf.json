@@ -2,14 +2,12 @@
   "productName": "tauri-rsc-exploration",
   "version": "0.0.0",
   "identifier": "com.tauri.dev",
-  "build": {
-    "frontendDist": "../src"
-  },
   "app": {
     "withGlobalTauri": true,
     "windows": [
       {
         "title": "tauri-rsc-exploration",
+        "url": "localhost:3000",
         "width": 800,
         "height": 600
       }
@@ -27,6 +25,9 @@
       "icons/128x128@2x.png",
       "icons/icon.icns",
       "icons/icon.ico"
+    ],
+    "externalBin": [
+      "../vendor/its-node"
     ]
   }
 }

@@ -12,6 +12,19 @@
     "resources:default",
     "menu:default",
     "tray:default",
+    {
+      "identifier": "shell:allow-execute",
+      "allow": [
+        {
+          "args": [
+            "../src/main.js"
+          ],
+          "cmd": "",
+          "name": "binaries/its-node",
+          "sidecar": true
+        }
+      ]
+    },
     "shell:allow-open"
   ]
 }
