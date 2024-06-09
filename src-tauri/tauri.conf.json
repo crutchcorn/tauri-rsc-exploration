@@ -28,6 +28,11 @@
     ],
     "externalBin": [
       "../vendor/its-node"
+    ],
+    "resources": [
+      "../src/**/*",
+      "../.next/**/*",
+      "../node_modules/**/*"
     ]
   }
 }

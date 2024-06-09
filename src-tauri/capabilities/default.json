@@ -17,7 +17,7 @@
       "allow": [
         {
           "args": [
-            "../src/main.js"
+            "../main.js"
           ],
           "cmd": "",
           "name": "binaries/its-node",

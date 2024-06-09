@@ -11,7 +11,8 @@ fn main() {
         .setup(|app| {
             let sidecar_command = app.shell().sidecar(
                 "its-node"
-            ).unwrap().args(["../src/main.js"]);
+            ).unwrap()
+                .args(["../main.js"]);
             let (mut rx, mut _child) = sidecar_command
                 .spawn()
                 .expect("Failed to spawn sidecar");
