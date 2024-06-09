@@ -2,6 +2,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
 use std::str;
+use tauri::is_dev;
 use tauri_plugin_shell::ShellExt;
 use tauri_plugin_shell::process::CommandEvent;
 
@@ -9,10 +10,16 @@ fn main() {
     tauri::Builder::default()
         .plugin(tauri_plugin_shell::init())
         .setup(|app| {
+            let sidecar_command_args: &[&str] = if is_dev() {
+                &["../main.js", "--", "--dev"]
+            } else {
+                &["../main.js"]
+            };
+
             let sidecar_command = app.shell().sidecar(
                 "its-node"
             ).unwrap()
-                .args(["../main.js"]);
+                .args(sidecar_command_args);
             let (mut rx, mut _child) = sidecar_command
                 .spawn()
                 .expect("Failed to spawn sidecar");
